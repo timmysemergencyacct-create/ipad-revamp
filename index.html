@@ -3,103 +3,351 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Timothy's iPad System</title>
+
+<title>HFA News</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
 }
 
 body{
-    background:#000;
+    background:#f4f6f9;
+    color:#333;
+}
+
+header{
+    background:#003366;
     color:white;
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:50px;
+}
+
+header p{
+    margin-top:10px;
+    font-size:18px;
 }
 
 .live{
-    font-size:40px;
-    color:red;
+    color:#ff4d4d;
+    font-weight:bold;
+}
+
+.container{
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+}
+
+.notice{
+    background:#fff8d6;
+    border-left:6px solid #f0b400;
+    padding:20px;
+    border-radius:10px;
     margin-bottom:20px;
-    font-weight:bold;
 }
 
-.title{
-    font-size:60px;
-    margin-bottom:30px;
+.notice h3{
+    color:#a06d00;
+    margin-bottom:10px;
 }
 
-#clock{
-    font-size:150px;
-    font-weight:bold;
+.updates{
+    background:#eaf3ff;
+    border-left:5px solid #003366;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
 }
 
-#date{
-    font-size:40px;
-    margin-top:20px;
-    color:#cccccc;
+.news-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
 }
 
-.red-dot{
-    animation:blink 1s infinite;
+.news-card h2{
+    color:#003366;
+    margin-bottom:10px;
 }
 
-@keyframes blink{
-    50%{
-        opacity:0;
-    }
+.date{
+    color:gray;
+    margin-bottom:15px;
+    font-size:14px;
 }
+
+.news-card p{
+    line-height:1.7;
+}
+
+.badge{
+    display:inline-block;
+    background:#003366;
+    color:white;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:12px;
+    margin-bottom:10px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th{
+    background:#003366;
+    color:white;
+    padding:12px;
+}
+
+td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+tr:hover{
+    background:#f5f5f5;
+}
+
+footer{
+    background:#003366;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
 </style>
 </head>
 <body>
 
-<div class="live">
-<span class="red-dot">🔴</span> LIVE
+<header>
+
+<h1>📰 HFA NEWS</h1>
+
+<p>
+<span class="live">🔴 LIVE</span>
+Latest School News & Announcements
+</p>
+
+</header>
+
+<div class="container">
+
+<div class="notice">
+
+<h3>📢 Official Information Notice</h3>
+
+<p>
+HFA News is updated whenever official information becomes
+available from teachers, administrators, or other school personnel.
+</p>
+
+<br>
+
+<p>
+We aim to provide students and parents with accurate school news,
+announcements, schedules, events, and important reminders.
+</p>
+
+<br>
+
+<p>
+Please check this website regularly for the latest updates.
+</p>
+
 </div>
 
-<div class="title">
-Timothy's iPad System
+<div class="updates">
+
+<strong>Latest Update:</strong>
+
+We update this website whenever we receive official news,
+announcements, reminders, or information from teachers
+or school personnel.
+
 </div>
 
-<div id="clock">
-00:00:00
+<div class="news-card">
+
+<div class="badge">LATEST NEWS</div>
+
+<h2>📚 Book Week & Library Card Reminder</h2>
+
+<div class="date">
+October 19, 2026
 </div>
 
-<div id="date">
-Loading...
+<p>
+Book Week is currently being celebrated at HFA.
+Students are encouraged to visit the library and
+discover exciting books to read.
+</p>
+
+<br>
+
+<p>
+Students who now have a valid library card may borrow
+books from the library according to library rules.
+</p>
+
+<br>
+
+<p>
+Please take care of borrowed books and return them on time.
+</p>
+
 </div>
 
-<script>
-function updateClock() {
+<div class="news-card">
 
-    const now = new Date();
+<div class="badge">FIELD TRIP</div>
 
-    const time = now.toLocaleTimeString("en-US", {
-        timeZone: "Asia/Manila",
-        hour12: true
-    });
+<h2>🚌 Field Trip Information</h2>
 
-    const date = now.toLocaleDateString("en-US", {
-        timeZone: "Asia/Manila",
-        weekday: "long",
-        year: "numeric",
-        month: "long",
-        day: "numeric"
-    });
+<div class="date">
+October 19, 2026
+</div>
 
-    document.getElementById("clock").textContent = time;
-    document.getElementById("date").textContent = date;
-}
+<p>
+There is currently no official field trip date announced.
+</p>
 
-updateClock();
-setInterval(updateClock, 1000);
-</script>
+<br>
+
+<p>
+We are currently waiting for additional reminders,
+updates, and announcements from teachers and school personnel.
+</p>
+
+<br>
+
+<p>
+Please continue checking HFA News for future updates regarding
+the field trip.
+</p>
+
+</div>
+
+<div class="news-card">
+
+<h2>🙏 October Rosary Prayers</h2>
+
+<div class="date">
+October 19, 2026
+</div>
+
+<p>
+Throughout the month of October, HFA students and staff are
+participating in Rosary prayers.
+</p>
+
+<br>
+
+<p>
+This special month is dedicated to prayer, reflection,
+and strengthening our faith. Students are encouraged
+to participate respectfully during prayer sessions.
+</p>
+
+</div>
+
+<div class="news-card">
+
+<h2>📅 Grade 4, 5 & 6 Schedule</h2>
+
+<div class="date">
+Updated October 19, 2026
+</div>
+
+<table>
+
+<tr>
+<th>Day</th>
+<th>School Hours</th>
+</tr>
+
+<tr>
+<td>Monday</td>
+<td>7:00 AM - 3:50 PM</td>
+</tr>
+
+<tr>
+<td>Tuesday</td>
+<td>7:00 AM - 3:50 PM</td>
+</tr>
+
+<tr>
+<td>Wednesday</td>
+<td>7:00 AM - 3:50 PM</td>
+</tr>
+
+<tr>
+<td>Thursday</td>
+<td>7:00 AM - 3:50 PM</td>
+</tr>
+
+<tr>
+<td>Friday</td>
+<td>7:00 AM - 10:50 AM</td>
+</tr>
+
+</table>
+
+<br>
+
+<p>
+This schedule applies to Grade 4, Grade 5, and Grade 6 students.
+</p>
+
+</div>
+
+<div class="news-card">
+
+<h2>📢 Welcome To HFA News</h2>
+
+<div class="date">
+October 19, 2026
+</div>
+
+<p>
+Welcome to HFA News. This website provides school news,
+announcements, schedules, events, reminders, and community updates.
+</p>
+
+<br>
+
+<p>
+Our goal is to keep students and parents informed with
+accurate and timely information from official school sources.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+HFA News © 2026
+
+<br><br>
+
+School News & Announcements
+
+</footer>
 
 </body>
 </html>
