@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timothy's iPad System</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#000;
+    color:white;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.live{
+    font-size:40px;
+    color:red;
+    margin-bottom:20px;
+    font-weight:bold;
+}
+
+.title{
+    font-size:60px;
+    margin-bottom:30px;
+}
+
+#clock{
+    font-size:150px;
+    font-weight:bold;
+}
+
+#date{
+    font-size:40px;
+    margin-top:20px;
+    color:#cccccc;
+}
+
+.red-dot{
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="live">
+<span class="red-dot">🔴</span> LIVE
+</div>
+
+<div class="title">
+Timothy's iPad System
+</div>
+
+<div id="clock">
+00:00:00
+</div>
+
+<div id="date">
+Loading...
+</div>
+
+<script>
+function updateClock() {
+
+    const now = new Date();
+
+    const time = now.toLocaleTimeString("en-US", {
+        timeZone: "Asia/Manila",
+        hour12: true
+    });
+
+    const date = now.toLocaleDateString("en-US", {
+        timeZone: "Asia/Manila",
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+    });
+
+    document.getElementById("clock").textContent = time;
+    document.getElementById("date").textContent = date;
+}
+
+updateClock();
+setInterval(updateClock, 1000);
+</script>
+
+</body>
+</html>
